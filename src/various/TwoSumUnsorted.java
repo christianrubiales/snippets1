@@ -4,6 +4,9 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * O(n log n) due to sorting, if already sorted then just O(n)
+ */
 public class TwoSumUnsorted {
 
 	public static Map<Integer, Integer> twoSum(int[] array, int sum) {

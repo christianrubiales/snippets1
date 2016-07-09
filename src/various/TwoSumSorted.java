@@ -3,6 +3,9 @@ package various;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * O(n)
+ */
 public class TwoSumSorted {
 
 	public static Map<Integer, Integer> twoSum(int[] array, int sum) {
