@@ -1,27 +1,32 @@
 package string;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
-public class FindIfSamePrefixExistsInStringList {
+/**
+ * We can just use the first characters of each word and put them in a set.
+ */
+public class FindIfSamePrefixExistsInStringListUsingSet {
 
 	public static boolean exists(List<String> list) {
-		char c = list.get(0).charAt(0);
+		Set<Character> set = new HashSet<Character>();
 		
-		for (int i = 1; i < list.size(); i++) {
-			if (list.get(i).charAt(0) != c) {
-				return false;
+		for (String s : list) {
+			if (set.contains(s.charAt(0))) {
+				return true;
 			}
+			set.add(s.charAt(0));
 		}
 		
-		return true;
+		return false;
 	}
 	
 	public static void main(String[] args) {
 		System.out.println(exists(Arrays.asList(new String[]{"a", "ab"}))); // true
 		System.out.println(exists(Arrays.asList(new String[]{"submarine", "subarray"}))); // true
 		System.out.println(exists(Arrays.asList(new String[]{"ab", "bc"}))); // false
-		System.out.println(exists(Arrays.asList(new String[]{"a", "ab", "abc"}))); // true
 	}
 
 }
